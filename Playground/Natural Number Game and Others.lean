@@ -80,6 +80,13 @@ theorem add_comm (m n: Nat) : m + n = n + m := by
 
 #check add_comm
 
+theorem try_false (h : 2 = 3) : 1 = 42 := by
+  cases h
+
+#check try_false
+-- Apparently it's possible to prove anything by contradition
+-- in LEAN.
+
 -- Notas extras sobre syntaxe
 
 -- While both ordinary mathematical notation and the majority of programming languages use parentheses (e.g. f(x))
