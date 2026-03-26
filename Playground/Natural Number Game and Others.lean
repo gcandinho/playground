@@ -1,7 +1,8 @@
+import Mathlib.Tactic.NthRewrite
 -- Here, are the exercises from the "Natural number game"
 -- Aqui, estão exercicios do jogo "Natural number game"
 
-theorem thsv_eq_thsv (x q: Nat) : 37*x + q = 37*x + q := by
+theorem thsv_eq_thsv (x q : Nat) : 37*x + q = 37*x + q := by
   rfl
   -- rfl is the same as reflexivity
   -- rfl é o mesmo que reflexitividade
@@ -15,7 +16,7 @@ theorem thsv_eq_thsv (x q: Nat) : 37*x + q = 37*x + q := by
 -- theorem (nome do teorema) (hipotese) ... (hipotese) : (objetivo) := by
 --  tática
 
-theorem ty_eq_txps (x y: Nat) (h : y = x + 7) : 2*y = 2*(x + 7) := by
+theorem ty_eq_txps (x y : Nat) (h : y = x + 7) : 2*y = 2*(x + 7) := by
   rw[h]
   -- The natural number game, says that the reflexivity is necessary
   -- The lean mathlib doens't seen to require that.
@@ -47,7 +48,8 @@ theorem four_eq_succ_three : (4 : Nat) = Nat.succ 3 :=
 
 #check four_eq_succ_three
 
--- Before we prove that 2 + 2 = 4, the game ask to prove that 2 is the successor of the succesor of zero
+-- Before we prove that 2 + 2 = 4, the game ask to prove that 2
+-- is the successor of the succesor of zero
 -- Antes de provarmos que 2 + 2 = 4, o jogo pede para provar que 2 é o sucessor do sucessor de zero
 theorem t_eq_succ_succ_z : (2 : Nat) = Nat.succ (Nat.succ 0) := by
   calc
@@ -83,14 +85,8 @@ theorem a_p_b_p_c_two (a b c : Nat) : a + (b + 0) + (c + 0) = a + b + c := by
   rw [Nat.add_zero c]
   rw [Nat.add_zero b]
 
-theorem succ_eq_add_one (n :Nat) : Nat.succ n = n + 1 := by
+theorem succ_eq_add_one (n : Nat) : Nat.succ n = n + 1 := by
   rw [one_eq_succ_zero]
-  -- Need more notes
-  -- Precisa de mais anotações
-  -- rw [one_eq_succ_zero]
-  -- rw [add_succ]
-  -- rw [add_zero]
-  -- rfl
 
 #check succ_eq_add_one
 
@@ -106,15 +102,21 @@ theorem succ_eq_add_one (n :Nat) : Nat.succ n = n + 1 := by
 
 -- Notas extras sobre syntaxe
 
--- While both ordinary mathematical notation and the majority of programming languages use parentheses (e.g. f(x))
--- to apply a function to its arguments, Lean simply writes the function next to its arguments (e.g. f x).
--- Function application is one of the most common operations, so it pays to keep it concise. Rather than writing
+-- While both ordinary mathematical notation and the majority of programming languages
+-- use parentheses (e.g. f(x))
+-- to apply a function to its arguments, Lean simply writes the function next
+-- to its arguments (e.g. f x).
+-- Function application is one of the most common operations, so it pays to keep it concise.
+-- Rather than writing
 -- #eval String.append("Hello, ", "Lean!")
 -- to compute "Hello, Lean!", one would instead write
 -- #eval String.append "Hello, " "Lean!"
--- Enquanto tanto a notação matemática usual quanto a maioria das linguagens de programação usam parênteses (ex.: f(x))
--- para aplicar uma função aos seus argumentos, o Lean simplesmente escreve a função ao lado dos seus argumentos (ex.: f x).
--- A aplicação de função é uma das operações mais comuns, então vale a pena mantê-la concisa. Em vez de escrever
+-- Enquanto tanto a notação matemática usual quanto a maioria das linguagens de programação
+-- usam parênteses (ex.: f(x))
+-- para aplicar uma função aos seus argumentos, o Lean simplesmente escreve a função ao lado dos
+-- seus argumentos (ex.: f x).
+-- A aplicação de função é uma das operações mais comuns, então vale a pena mantê-la concisa.
+-- Em vez de escrever
 -- #eval String.append("Hello, ", "Lean!")
 -- para calcular "Hello, Lean!", escreve-se
 -- #eval String.append "Hello, " "Lean!"
